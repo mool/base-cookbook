@@ -1,7 +1,7 @@
 name             'base'
 maintainer       'Pablo Gutiérrez del Castillo'
 maintainer_email 'pablogutierrezdelc@gmail.com'
-license          'All rights reserved'
+license          'Apache 2.0'
 description      'Installs/Configures base'
 long_description 'Installs/Configures base'
 version          '0.1.0'
