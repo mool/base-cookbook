@@ -1,8 +1,15 @@
-# Timezone config
+#
+# Cookbook Name:: base
+# Attributes:: openssh
+#
+# Copyright (C) 2014 Pablo Gutiérrez del Castillo
+#
+
+# Timezone configuration
 default['tz'] = 'Etc/UTC'
 
-# sudo config
-default['authorization']['sudo']['groups'] = ['adm','sudo','ops']
+# sudo configuration
+default['authorization']['sudo']['groups'] = ['sudo']
 default['authorization']['sudo']['passwordless'] = true
 default['authorization']['sudo']['include_sudoers_d'] = true
 default['authorization']['sudo']['sudoers_defaults'] = [
