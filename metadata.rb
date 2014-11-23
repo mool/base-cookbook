@@ -11,5 +11,6 @@ supports         'ubuntu'
 
 depends          'apt'
 depends          'build-essential'
+depends          'monit-ng'
 depends          'sudo'
 depends          'timezone-ii'
