@@ -1,12 +1,15 @@
 # base-cookbook
 
-TODO: Enter the cookbook description here.
+Base chef cookbook to setup my servers.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+* Ubuntu 12.04
+* Ubuntu 14.04
 
 ## Attributes
+
+Some basic attributes are:
 
 <table>
   <tr>
@@ -16,10 +19,40 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['base']['bacon']</tt></td>
+    <td><tt>['tz']</tt></td>
+    <td>String</td>
+    <td>Server's timezone</td>
+    <td><tt>'Etc/UTC'</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['authorization']['sudo']['groups']</tt></td>
+    <td>Array</td>
+    <td>Groups enabled to use sudo</td>
+    <td><tt>['sudo']</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['authorization']['sudo']['passwordless']</tt></td>
     <td>Boolean</td>
-    <td>whether to include bacon</td>
+    <td>Enable passwordless sudo</td>
     <td><tt>true</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['openssh']['server']['port']</tt></td>
+    <td>String</td>
+    <td>SSH port</td>
+    <td><tt>'22'</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['openssh']['server']['permit_root_login']</tt></td>
+    <td>String</td>
+    <td>Enables or disables root login through SSH (yes, no, without-password)</td>
+    <td><tt>'without-password'</tt></td>
+  </tr>
+  <tr>
+    <td><tt>default['base']['monit']['fs']</tt></td>
+    <td>Array</td>
+    <td>Checks free space in specified disk's partition</td>
+    <td><tt>[]</tt></td>
   </tr>
 </table>
 
@@ -27,16 +60,18 @@ TODO: List your supported platforms.
 
 ### base::default
 
-Include `base` in your node's `run_list`:
+Include `base::default` in your node's `run_list` and it will install
+some basic packages, configure the server's timezone and sudo.
 
-```json
-{
-  "run_list": [
-    "recipe[base::default]"
-  ]
-}
-```
+### base::openssh
+
+This recipe will install and configure openssh service with some basic
+security options.
+
+### base::monit
+
+This recipe installs monit and configure it to monitor the server.
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Pablo Gutiérrez del Castillo (<pablogutierrezdelc@gmail.com>)
