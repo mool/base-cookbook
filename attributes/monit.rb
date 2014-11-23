@@ -6,7 +6,7 @@
 #
 
 # disk partitions to monitor
-default['base']['monit']['fs'] = ['']
+default['base']['monit']['fs'] = []
 
 # alerts subscribers
 default['monit']['config']['subscribers'] = [
