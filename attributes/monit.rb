@@ -12,7 +12,7 @@ default['base']['monit']['fs'] = ['']
 default['monit']['config']['subscribers'] = [
   {
     name:          'root@localhost',
-    subscriptions: %w( connection exec icmp fsflags nonexist pid ppid resource status timeout ),
+    subscriptions: %w( connection exec icmp fsflags nonexist pid ppid resource status timeout )
   }
 ]
 
@@ -32,6 +32,6 @@ default['monit']['config']['mail_servers'] = [
     :username => nil,
     :password => nil,
     :security => nil,
-    :timeout => '30 seconds',
-  },
+    :timeout => '30 seconds'
+  }
 ]
